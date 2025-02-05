@@ -8,7 +8,10 @@ target_include_directories(MyTest
   ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-target_link_libraries(MyTest PRIVATE CppUTest)
+target_link_libraries(MyTest PRIVATE 
+  CppUTest
+  MyLib
+)
 
 enable_testing()
 add_test(MyTest MyTest)

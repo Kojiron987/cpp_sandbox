@@ -7,15 +7,18 @@ set(TARGET_GROUP production CACHE STRING "Group to build")
 
 include(FetchContent)
 
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+add_subdirectory(src)
+
 if(TARGET_GROUP STREQUAL production) 
-  add_subdirectory(src)
+  # do nothing
 elseif(TARGET_GROUP STREQUAL test) 
   FetchContent_Declare(
     CppUTest
     GIT_REPOSITORY https://github.com/cpputest/cpputest.git
     GIT_TAG v4.0
   )
-
   FetchContent_MakeAvailable(CppUTest)
   add_subdirectory(test)
   include(CTest)
