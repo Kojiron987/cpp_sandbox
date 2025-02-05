@@ -1,4 +1,3 @@
-
 #include "CppUTest/TestHarness.h"
 
 // テスト対象の関数

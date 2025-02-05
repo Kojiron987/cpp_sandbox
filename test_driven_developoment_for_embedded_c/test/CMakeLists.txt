@@ -1,6 +1,9 @@
 add_executable(MyTest
   AllTests.cc
   main_test.cc
+
+  led_driver/LedDriverTest.cc
+  stdio/SprintfTest.cc
 )
 
 target_include_directories(MyTest
