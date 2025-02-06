@@ -7,8 +7,6 @@ set(TARGET_GROUP production CACHE STRING "Group to build")
 
 include(FetchContent)
 
-include_directories(${CMAKE_SOURCE_DIR}/include)
-
 add_subdirectory(src)
 
 if(TARGET_GROUP STREQUAL production) 

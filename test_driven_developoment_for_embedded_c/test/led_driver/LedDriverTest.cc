@@ -41,3 +41,26 @@ TEST(LedDriver_Test, TurnOnMultipleLeds) {
   BYTES_EQUAL(0x0180, virtualleds_);
 }
 
+TEST(LedDriver_Test, TurnOffAnyLeds) {
+  driver_->TurnOn(9);
+  driver_->TurnOn(8);
+  driver_->TurnOff(8);
+  BYTES_EQUAL(0x0100, virtualleds_);
+}
+
+TEST(LedDriver_Test, TurnAllOn) {
+  driver_->TurnAllOn();
+  BYTES_EQUAL(0xffff, virtualleds_);
+}
+
+TEST(LedDriver_Test, TurnAllOff) {
+  driver_->TurnAllOff();
+  BYTES_EQUAL(0x0000, virtualleds_);
+}
+
+TEST(LedDriver_Test, LedMemoryIsNotReadable) {
+  virtualleds_ = 0xffff;
+  driver_->TurnOn(8);
+  BYTES_EQUAL(0x0080, virtualleds_);
+}
+

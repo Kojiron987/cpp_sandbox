@@ -9,6 +9,7 @@ add_executable(MyTest
 target_include_directories(MyTest
   PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}
+  ${CMAKE_SOURCE_DIR}/src
 )
 
 target_link_libraries(MyTest PRIVATE 
@@ -18,3 +19,4 @@ target_link_libraries(MyTest PRIVATE
 
 enable_testing()
 add_test(MyTest MyTest)
+
