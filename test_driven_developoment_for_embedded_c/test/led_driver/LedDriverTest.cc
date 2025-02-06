@@ -34,3 +34,10 @@ TEST(LedDriver_Test, TurnOffLedOne) {
   driver_->TurnOff(1);
   BYTES_EQUAL(0, virtualleds_);
 }
+
+TEST(LedDriver_Test, TurnOnMultipleLeds) {
+  driver_->TurnOn(9);
+  driver_->TurnOn(8);
+  BYTES_EQUAL(0x0180, virtualleds_);
+}
+
