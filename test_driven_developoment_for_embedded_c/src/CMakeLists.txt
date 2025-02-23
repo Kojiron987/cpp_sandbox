@@ -5,6 +5,7 @@ add_library(MyLib STATIC
 
 target_include_directories(MyLib PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}
+  ${CMAKE_SOURCE_DIR}/include
 )
 
 add_executable(MyApp main.cc)
